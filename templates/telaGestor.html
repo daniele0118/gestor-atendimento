@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GesTI</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+        <nav>
+            <a href="/url_voltar"><img (click)="" src="{{url_for('static', filename='teste.png')}}"> </a>
+            <div class="dropdown">
+                <button class="drop-button">Clientes</button>
+                <div class="drop-options">
+                    <a href="/selecionar_cliente">Cadastro</a>
+                    <a id="abrirconsultarcliente">Consulta</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="drop-button">Chamados</button>
+                <div class="drop-options">
+                    <a id="abrirconsultarchamado">Consultar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="drop-button">Assunto</button>
+                <div class="drop-options">
+                    <a href="/inserir_assunto">Criar</a>
+                    <a id="abrirconsultarassunto">Consultar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="drop-button">Equipamento</button>
+                <div class="drop-options">
+                    <a href="/inserirEquipamento">Criar</a>
+                    <a id="abrirconsultarequipamento">Consultar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+               <a href="/"> <button class="drop-button">Sair</button></a>
+            </div>
+        </nav>
+    </head>
+
+    <body>
+        <!-- Consultas de chamado -->
+        <form action="/consulta_chamado" method="post">
+            <div id="consultachamado" class="container" style="display: none;">
+                <h2 class="meu-subtitulo">Pesquisar por ID</h2>
+                <input type="text" class="texto" id="cha_id" name="cha_id" placeholder="Digite o ID do chamado"><br>
+                <button type="submit" id="pesquisarchamado" class="meu-botao">Pesquisar</button>
+                <button type="button" id="fecharconsultarchamado" class="meu-botao">Fechar</button>
+            </div>
+            </form>
+        <!-- Fim de consultas de chamado -->           
+        
+        <!-- Consultas de clientes -->
+        <form action="/consulta_cliente" method="post">
+        <div id="consultarcliente" class="container" style="display: none;">
+            <h2 class="meu-subtitulo">Pesquisar Cliente</h2>
+            <input type="text" class="texto" id="nome" name="nome" placeholder="Digite o nome do cliente"><br>
+            <button type="submit" id="pesquisarcliente" class="meu-botao">Pesquisar</button>
+            <button type="button" id="fecharconsultarcliente" class="meu-botao">Fechar</button>
+        </div>
+        </form>
+        <!-- Fim de consultas de clientes -->
+
+        <!-- Consultas de Assuntos -->
+        <form action="/consulta_assunto" method="post">
+            <div id="consultarassunto" class="container" style="display: none;">
+                <h2 class="meu-subtitulo">Pesquisar Assunto</h2>
+                <input type="text" class="texto" id="as_nome" name="as_nome" placeholder="Digite o assunto"><br>
+                <button type="submit" id="buscarusuario" class="meu-botao">Pesquisar</button>
+                <button type="button" id="fecharconsultarassunto" class="meu-botao">Fechar</button>
+            </div>
+        
+
+        <!-- Fim de consultas de Assuntos -->
+        </form>        
+
+
+        <!-- Consultas de Equipamento -->
+        <form action="/consulta_equipamento" method="post">
+            <div id="consultarequipamento" class="container" style="display: none;">
+                <h2 class="meu-subtitulo">Pesquisar Equipamento</h2>
+                <input type="text" class="texto" id="eq_tipo" name="eq_tipo" placeholder="Digite o tipo do equipamento"><br>
+                <button type="submit" id="buscarusuario" class="meu-botao">Pesquisar</button>
+                <button type="button" id="fecharconsultarequipamento" class="meu-botao">Fechar</button>
+            </div>
+        
+
+        <!-- Fim de consultas de Equipamento -->
+        </form>        
+
+        <script>
+
+            //Consultas de clientes
+            document.getElementById("abrirconsultarcliente").addEventListener("click", function () {
+                document.getElementById("consultarassunto").style.display = "none";  
+                document.getElementById("consultarequipamento").style.display = "none";
+                document.getElementById("consultachamado").style.display = "none";              
+                document.getElementById("consultarcliente").style.display = "block";
+            });
+        
+            document.getElementById("fecharconsultarcliente").addEventListener("click", function () {
+                document.getElementById("consultarcliente").style.display = "none";
+            });
+            //Fim de consultas de clientes
+
+            //Consultas de assunto
+            document.getElementById("abrirconsultarassunto").addEventListener("click", function () {
+                document.getElementById("consultarcliente").style.display = "none";
+                document.getElementById("consultarequipamento").style.display = "none";
+                document.getElementById("consultachamado").style.display = "none";
+                document.getElementById("consultarassunto").style.display = "block";
+            });
+        
+            document.getElementById("fecharconsultarassunto").addEventListener("click", function () {
+                document.getElementById("consultarassunto").style.display = "none";
+            });
+            //Fim de consultas de assunto
+
+            //Consultas de equipamento
+            document.getElementById("abrirconsultarequipamento").addEventListener("click", function () {
+                document.getElementById("consultarcliente").style.display = "none";
+                document.getElementById("consultarassunto").style.display = "nome";
+                document.getElementById("consultachamado").style.display = "none";
+                document.getElementById("consultarequipamento").style.display = "block";
+            });
+        
+            document.getElementById("fecharconsultarequipamento").addEventListener("click", function () {
+                document.getElementById("consultarequipamento").style.display = "none";
+            });
+            //Fim de consultas de equipamento            
+
+            //Consultas de chamados
+            document.getElementById("abrirconsultarchamado").addEventListener("click", function () {
+                document.getElementById("consultarcliente").style.display = "none";
+                document.getElementById("consultarequipamento").style.display = "none";
+                document.getElementById("consultachamado").style.display = "block";
+                document.getElementById("consultarassunto").style.display = "none";
+            });
+        
+            document.getElementById("fecharconsultarequipamento").addEventListener("click", function () {
+                document.getElementById("consultachamado").style.display = "none";
+            });
+            //Fim de consultas de chamados  
+            
+        </script>
+
+
+    </body>
+</html>

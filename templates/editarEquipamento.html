@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Editar equipamento</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+<body>
+  <h2 class="meu-titulo">Equipamento</h2>
+
+  <div class="container">
+   <form action="/editar_equipamento" method="post">
+
+    <label for="eq_id" class="minha-label">ID:</label>
+    <input type="text" id="eq_id" name="eq_id" value="{{ eq_id }}" readonly><br>
+
+    <label for="cli_id" class="minha-label">ID do Cliente:</label>
+    <input type="text" id="cli_id" name="cli_id" value="{{ cli_id }}" readonly><br>
+
+    <label for="eq_tipo" class="minha-label">Tipo:</label>
+    <input type="text" id="eq_tipo" name="eq_tipo" value="{{ eq_tipo }}"><br>
+
+    <label for="eq_marca" class="minha-label">Marca:</label>
+    <input type="text" id="eq_marca" name="eq_marca" value="{{ eq_marca }}"><br>
+
+    <label for="eq_modelo" class="minha-label">Modelo:</label>
+    <input type="text" id="eq_modelo" name="eq_modelo" value="{{ eq_modelo }}"><br>
+
+    <label for="eq_serial" class="minha-label">Serial:</label>
+    <input type="text" id="eq_serial" name="eq_serial" value="{{ eq_serial }}"><br>
+
+    <button type="submit" class="meu-botao"> Atualizar Informações </button>
+    <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+  </form>
+
+  <script>
+    document.getElementById("meuBotao").addEventListener("click", function() {
+        window.location.href = "/url_voltar";
+    });
+</script>
+</div>
+</body>
+</html>
+

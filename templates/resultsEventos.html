@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+ </head>
+<body>
+    <h2 class="meu-titulo">Resultados da Pesquisa</h2><br>
+    <div class="container">
+    
+    <ul>
+        {% for ev_result in detalhes_eventos %}
+            
+            <br><li>ID: {{ ev_result[0] }}<br>ID Usuario: {{ ev_result[1] }}<br>Setor: {{ ev_result[2] }}<br>Status: {{ ev_result[3] }}<br>Nota: {{ ev_result[4] }}<br>Data: {{ ev_result[5] }}</a></li><br>
+            
+        {% endfor %}
+    </ul>
+    
+    </div>
+    <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+
+    <script>
+    document.getElementById("meuBotao").addEventListener("click", function() {
+        window.location.href = "/url_voltar";
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pessoa Fisica</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+
+<body>
+    <h2 class="meu-titulo">Detalhes do Cliente</h2>
+    <h3 class="meu-subtitulo">Informações do cliente:</h3>
+    
+    <div class="container">
+    <form action="/inserirevento" method="post">
+        <label class="minha-label">ID do Chamado:</label>
+        <input type="text" clas="meu-input" id="cha_id" name="cha_id" value="{{ cha_id }}" readonly><br>
+    
+    
+    
+        <label class="minha-label">Nome do usuário:</label>
+        <input type="text" id="us_nome" name="us_nome" value="{{ us_nome }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Cliente:</label>
+        <input type="text" id="pj_nomefantasia" name="pj_nomefantasia" value="{{ pj_nomefantasia }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Assunto:</label>
+        <input type="text" id="out_assunto" name="out_assunto" value="{{ out_assunto }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Equipamento:</label>
+        <input type="text" id="eq_tipo" name="eq_tipo" value="{{ eq_tipo }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Serial do equipamento:</label>
+        <input type="text" id="eq_serial" name="eq_serial" value="{{ eq_serial }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Texto:</label>
+        <input type="text" id="cha_texto" name="cha_texto" value="{{ cha_texto }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Hora aberto:</label>
+        <input type="text" id="cha_hora" name="cha_hora" value="{{ cha_hora }}" readonly><br>
+    
+        <button type="submit" id="meuBotao" class="meu-botao">Adicionar evento</button>
+        <button type="button" id="vereventos" class="meu-botao">Ver Eventos</button>
+        <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+    </form>    
+    <script>
+        document.getElementById("meuBotao").addEventListener("click", function() {
+            window.location.href = "/url_voltar";
+        });
+
+        $(document).ready(function() {
+            $("#vereventos").on("click", function() {
+                var cha_id = $("#cha_id").val();
+                var form = $('<form action="/consulta_evento" method="post">' +
+                    '<input type="hidden" name="cha_id" value="' + cha_id + '">' +
+                    '</form>');
+
+                $(document.body).append(form);
+                form.submit();
+            });
+        });  
+    </script>
+   
+</body>
+</html>

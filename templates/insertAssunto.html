@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insesrir assunto</title>   
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+        }
+        .minha-label {
+            font-size: 20px; /* Tamanho da fonte */
+            color: white; /* Cor do texto */
+            margin-bottom: 5px; /* Margem inferior */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <form action="/enviar_dados" method="post">
+        <label for="id" class="minha-label">ID:</label>
+        <input type="text" id="id" name="id" value="{{ as_id }}" readonly><br>
+
+        <label for="nome" class="minha-label">Nome:</label>
+        <input type="text" id="nome" name="nome"><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

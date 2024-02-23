@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Inserir Usuario Funcionario</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+<body>
+  <h2 class="meu-titulo">Detalhes do Cliente</h2>
+  <h3 class="meu-subtitulo">Informações do cliente:</h3>
+
+  <div class="container">
+   <form action="/editar_user_funcionario" method="post">
+
+    <label for="us_id" class="minha-label">ID:</label>
+    <input type="text" id="us_id" name="us_id" value="{{ us_id }}" readonly><br>
+
+    <label for="us_nome" class="minha-label">Selecione o tipo de usuario: </label><select name="list_box" size="1">
+      <option value="3"  {% if tu_id == 3 %}selected{% endif %} >Gestor</option>
+      <option value="2" {% if tu_id == 2 %}selected{% endif %}>Usuario</option>
+      <option value="1" {% if tu_id == 1 %}selected{% endif %}>Administrador</option>
+    </select><br>
+
+    <label for="fun_nome" class="minha-label">Nome:</label>
+    <input type="text" id="fun_nome" name="fun_nome" value="{{ fun_nome }}"><br>
+    
+    <label for="fun_CPF" class="minha-label">CPF:</label>
+    <input type="text" id="fun_CPF" name="fun_CPF" value="{{ fun_CPF }}"><br>
+
+    <label for="fun_celular" class="minha-label">Celular:</label>
+    <input type="text" id="fun_celular" name="fun_celular" value="{{ fun_celular }}"><br>
+
+    <label for="fun_endereco" class="minha-label">Endereco:</label>
+    <input type="text" id="fun_endereco" name="fun_endereco" value="{{ fun_endereco }}"><br>
+
+    <label for="fun_login" class="minha-label">Login:</label>
+    <input type="text" id="fun_login" name="fun_login" value="{{ fun_login }}"><br>
+
+    <label for="fun_senha" class="minha-label">Senha:</label>
+    <input type="text" id="fun_senha" name="fun_senha" placeholder="Deixe em branco para manter a senha atual"><br>
+
+    <label for="selectSetor" class="minha-label">Setor:</label>
+    <select name="selectSetor">
+
+        {% for item in selectSetor %}
+          <option value="{{ item.set_id }}" {% if item.set_id == set_id %}selected{% endif %}>{{ item.set_nome }}</option>
+        {% endfor %}
+    </select> <br>
+
+    <button type="submit" class="meu-botao"> Atualizar Informações </button>
+    <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+  </form>
+
+  <script>
+    document.getElementById("meuBotao").addEventListener("click", function() {
+        window.location.href = "/url_voltar";
+    });
+</script>
+</div>
+</body>
+</html>

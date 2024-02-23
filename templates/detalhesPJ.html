@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juridica</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <h2 class="meu-titulo">Detalhes do Cliente</h2>
+    <h3 class="meu-subtitulo">Informações do cliente:</h3>
+
+    <div class="container">
+    
+         <label class="minha-label">ID do Cliente:</label>
+        <input type="text" id="cli_id" name="cli_id" value="{{ cli_id }}" readonly><br>
+    
+    
+   
+        <label class="minha-label">CNPJ:</label>
+        <input type="text" id="pj_cnpj" name="pj_cnpj" value="{{ pj_cnpj }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Razão Social:</label>
+        <input type="text" id="pj_razaosocial" name="pj_razaosocial" value="{{ pj_razaosocial }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Nome Fantasia:</label>
+        <input type="text" id="pj_nomefantasia" name="pj_nomefantasia" value="{{ pj_nomefantasia }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Endereço:</label>
+        <input type="text" id="cli_endereco" name="cli_endereco" value="{{ cli_endereco }}" readonly><br>
+    
+
+    
+        <label class="minha-label">CEP:</label>
+        <input type="text" id="cli_cep" name="cli_cep" value="{{ cli_cep }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Telefone:</label>
+        <input type="text" id="cli_telefone" name="cli_telefone" value="{{ cli_telefone }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Celular:</label>
+        <input type="text" id="cli_celular" name="cli_celular" value="{{ cli_celular }}" readonly><br>
+    
+
+    
+        <label class="minha-label">Email:</label>
+        <input type="text" id="cli_email" name="cli_email" value="{{ cli_email }}" readonly><br>
+
+        
+        <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+        
+    
+    <script>
+        document.getElementById("meuBotao").addEventListener("click", function() {
+            window.location.href = "/url_voltar";
+        });
+    </script>
+</body>
+</html>

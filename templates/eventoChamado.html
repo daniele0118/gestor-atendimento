@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evento</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+    <div class="container">
+    <form action="/inserir_evento" method="post">
+        <label for="eve_id" class="minha-label">ID do evento:</label>
+        <input type="text" id="eve_id" name="eve_id" value="{{ eve_id }}" readonly><br>
+
+        <label for="cha_id" class="minha-label">ID do chamado:</label>
+        <input type="text" id="cha_id" name="cha_id" value="{{ cha_id }}"> <br>
+
+        <label for="selectStatus" class="minha-label">Status:</label>
+        <select name="selectStatus">
+
+            {% for item in selectStatus %}
+              <option value="{{ item.sta_id }}">{{ item.sta_nome }}</option>
+            {% endfor %}
+        </select> <br>
+
+        <label for="selectSetor" class="minha-label">Setor:</label>
+        <select name="selectSetor">
+
+            {% for item in selectSetor %}
+              <option value="{{ item.set_id }}">{{ item.set_nome }}</option>
+            {% endfor %}
+        </select> <br>
+
+        <label for="aco_resultado" class="minha-label">Selecione o resultado: </label>
+        <select name="aco_resultado" size="1">
+            <option value="1">Não Resolvido</option>
+            <option value="2">Resolvido</option>
+          </select><br>
+
+        <label for="eve_nota" class="minha-label">Descrição do evento:</label>
+        <input type="text" id="eve_nota" name="eve_nota"><br>  
+        
+        <label for="eve_tempo" class="minha-label">Tempo:</label>
+        <input type="text" id="eve_tempo" name="eve_tempo"><br>  
+
+
+        <button type="submit" class="meu-botao">Adicionar Evento</button>
+        <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+    </form>
+    <script>
+        document.getElementById("meuBotao").addEventListener("click", function() {
+            window.location.href = "/url_voltar";
+        });
+    </script>
+</div>
+</body>
+</html>
+

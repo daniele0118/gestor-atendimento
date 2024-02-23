@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pessoa Fisica</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+
+<body>
+    <h2 class="meu-titulo">Detalhes do Cliente</h2>
+    <h3 class="meu-subtitulo">Informações do cliente:</h3>
+    
+    <div class="container">
+    <form action="/editar_PF" method="post">
+        <label class="minha-label">ID do Cliente:</label>
+        <input type="text" clas="meu-input" id="cli_id" name="cli_id" value="{{ cli_id }}" readonly><br>
+    
+    
+    
+        <label class="minha-label">CPF:</label>
+        <input type="text" id="pf_cpf" name="pf_cpf" value="{{ pf_cpf }}"><br>
+    
+
+    
+        <label class="minha-label">Nome Completo:</label>
+        <input type="text" id="pf_nome" name="pf_nome" value="{{ pf_nome }}"><br>
+    
+
+    
+        <label class="minha-label">Nome Social:</label>
+        <input type="text" id="pf_nomesocial" name="pf_nomesocial" value="{{ pf_nomesocial }}"><br>
+    
+
+    
+        <label class="minha-label">Endereço:</label>
+        <input type="text" id="cli_endereco" name="cli_endereco" value="{{ cli_endereco }}"><br>
+    
+
+    
+        <label class="minha-label">CEP:</label>
+        <input type="text" id="cli_cep" name="cli_cep" value="{{ cli_cep }}"><br>
+    
+
+    
+        <label class="minha-label">Telefone:</label>
+        <input type="text" id="cli_telefone" name="cli_telefone" value="{{ cli_telefone }}"><br>
+    
+
+    
+        <label class="minha-label">Celular:</label>
+        <input type="text" id="cli_celular" name="cli_celular" value="{{ cli_celular }}"><br>
+    
+
+    
+        <label class="minha-label">Email:</label>
+        <input type="text" id="cli_email" name="cli_email" value="{{ cli_email }}"><br>
+    
+        <button type="submit" class="meu-botao"> Atualizar Informações </button>
+        <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+    </form>    
+    <script>
+        document.getElementById("meuBotao").addEventListener("click", function() {
+            window.location.href = "/url_voltar";
+        });
+    </script>
+   
+</body>
+</html>

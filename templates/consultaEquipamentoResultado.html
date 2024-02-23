@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados da Consulta</title>
+    <style>
+        body {
+            background-color: #292929; /* Cinza claro */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultados da Consulta</h1>
+    <p>Consultando registros com assunto igual a '{{ eq_tipo }}':</p>
+    <ul>
+        {% for row in data %}
+        <li>{{ row }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/url_voltar">Voltar à Página Principal</a>
+</body>
+</html>

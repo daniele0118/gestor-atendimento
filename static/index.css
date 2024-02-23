@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+}
+
+nav{
+    background-color: gray;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 5rem;
+}
+
+img{
+    width: 7rem;
+    cursor: pointer;
+}
+
+.dropdown{
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.dropdown .drop-button{
+    border: none;
+    outline: none;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.drop-options{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+ .drop-options a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+ 
+  .drop-options a:hover {
+    background-color: #ddd;
+  }
+  
+ 
+  .dropdown:hover .drop-options {
+    display: block;
+  }
+
+button{
+    cursor: pointer;
+}
+
+.minha-label {
+    width: 150px;
+    font-size: 20px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    margin-bottom: 10px; /* Margem inferior */
+    
+}
+
+.meu-titulo{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.meu-subtitulo{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.meu-botao {
+    background-color: black; /* Cor de fundo */
+    border: none; /* Remove a borda */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno (topo/baixo esquerda/direita) */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove decoração do texto */
+    display: inline-block; /* Exibe como bloco */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 4px; /* Borda arredondada */
+    cursor: pointer; /* Mostra o cursor de apontar */
+    margin: 10px; /* Margens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para o botão quando hover (passar o mouse) */
+.meu-botao:hover {
+    background-color: #45a049;
+}
+
+form{
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+input[type="text"]{
+    flex: 1;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+    
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+}
+
+li{
+    width: 150px;
+    font-size: 20px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    margin-bottom: 10px; /* Margem inferior */
+    flex: 1;
+    margin-bottom: 10px;
+    align-items: start;
+}

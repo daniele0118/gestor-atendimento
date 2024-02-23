@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GesTI</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+<nav>
+    <a href="/telaadm"><img (click)="" src="{{url_for('static', filename='teste.png')}}"> </a>
+    <div class="dropdown">
+        <button class="drop-button">Clientes</button>
+        <div class="drop-options">
+            <a href="/selecionar_cliente">Cadastro</a>
+            <a id="abrirconsultarcliente">Consulta</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="drop-button">Usuarios</button>
+        <div class="drop-options">
+            <a href="/inserirUserCliente">Cliente</a>
+            <a href="/inserirUserFuncionario">Funcionario</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="drop-button">Chamados</button>
+        <div class="drop-options">
+            <a href="/inserirChamado">Criar</a>
+            <a href="/inserirevento">Evento</a>
+            <a>Consultar</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="drop-button">Assunto</button>
+        <div class="drop-options">
+            <a href="/inserir_assunto">Criar</a>
+            <a href="/consulta">Consultar</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="drop-button">Equipamento</button>
+        <div class="drop-options">
+            <a href="/inserirEquipamento">Criar</a>
+            <a href="/consulta_equipamento">Consultar</a>
+        </div>
+    </div>
+    <div class="dropdown">
+       <a href="/"> <button class="drop-button">Sair</button></a>
+    </div>
+</nav>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Inserir Usuario Cliente</title>
+
+  <style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #333333;
+    }
+    .minha-label {
+        font-size: 20px; /* Tamanho da fonte */
+        color: white; /* Cor do texto */
+        margin-bottom: 5px; /* Margem inferior */
+    }
+
+    
+</style>
+</head>
+<body>
+   <form action="/inserir_user_cliente" method="post">
+
+    <label for="us_id" class="minha-label">ID:</label>
+    <input type="text" id="us_id" name="us_id" value="{{ us_id }}" readonly><br>
+
+    <label for="us_nome" class="minha-label">Selecione o tipo de usuario: </label><select name="list_box" size="1">
+      <option value="3">Gestor</option>
+      <option value="2">Usuario</option>
+    </select><br>
+
+    <label for="cli_id" class="minha-label">Cliente ID:</label>
+    <input type="text" id="cli_id" name="cli_id"><br>
+    
+    <label for="us_nome" class="minha-label">Nome:</label>
+    <input type="text" id="us_nome" name="us_nome"><br>
+
+    <label for="us_celular" class="minha-label">Celular:</label>
+    <input type="text" id="us_celular" name="us_celular"><br>
+
+    <label for="us_email" class="minha-label">E-mail:</label>
+    <input type="text" id="us_email" name="us_email"><br>
+
+    <label for="us_login" class="minha-label">Login:</label>
+    <input type="text" id="us_login" name="us_login"><br>
+
+    <label for="us_senha" class="minha-label">Senha:</label>
+    <input type="text" id="us_senha" name="us_senha"><br>
+
+
+    <input type="submit" value="Enviar">
+  </form>
+
+</body>
+</html>
