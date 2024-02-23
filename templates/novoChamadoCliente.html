@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chamado</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <form action="/inserir_chamado_cliente" method="post">
+        <label for="cha_id" class="minha-label">ID do chamado:</label>
+        <input type="text" id="cha_id" name="cha_id" value="{{ cha_id }}" readonly><br>
+
+        <label for="selectAssunto" class="minha-label">Assunto:</label>
+        <select name="selectAssunto" id="selectAssunto">
+
+            {% for item in selectAssunto %}
+              <option value="{{ item.as_id }}">{{ item.as_nome }}</option>
+            {% endfor %}
+            <option value="outro" id="outro">Outro</option>
+        </select> <br>
+        <label for="out_assunto" class="minha-label" id="out_assunto_label" style="display: none;">Outro assunto:</label>
+        <input type="text" id="out_assunto" name="out_assunto" id="out_assunto_text" style="display: none;">
+
+        <label for="cha_texto" class="minha-label">Descrição do problema:</label>
+        <input type="text" id="cha_texto" name="cha_texto"><br>  
+        
+        <label for="selectEquipamento" class="minha-label">Equipamento:</label>
+        <select name="selectEquipamento">
+
+            {% for item in selectEquipamento %}
+              <option value="{{ item.eq_id }}">{{ item.eq_tipo }} - {{ item.eq_serial }}</option>
+            {% endfor %}
+        </select> <br>
+ 
+        <button type="submit" class="meu-botao"> Criar Chamado </button>
+        <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+    </form>
+    <script>
+        document.getElementById("meuBotao").addEventListener("click", function() {
+            window.location.href = "/url_voltar";
+        });
+
+        document.getElementById("selectAssunto").addEventListener("change", function(){
+            var selectedOption = this.options[this.selectedIndex].value;
+            var outroAssuntoLabel = document.getElementById("out_assunto_label");
+            var outroAssuntoText = document.getElementById("out_assunto");
+
+        if (selectedOption === "outro"){
+            outroAssuntoLabel.style.display = 'block';
+            outroAssuntoText.style.display = "block";
+        } else {
+            outroAssuntoLabel.style.display = "none";
+            outroAssuntoText.style.display = "none";           
+        }
+        });
+    </script>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+        }
+        .minha-label {
+            font-size: 20px; /* Tamanho da fonte */
+            color: white; /* Cor do texto */
+            margin-bottom: 5px; /* Margem inferior */
+        }
+
+        .meu-titulo{
+            font-size: 40px;
+            color: white;
+            margin-bottom: 5px
+        }
+
+        .meu-subtitulo{
+            font-size: 30px;
+            color: white;
+            margin-bottom: 5px
+        }
+
+        a{
+            font-size: 20px;
+            color: white;
+            margin-bottom: 5px
+        }
+
+        .meu-botao {
+            background-color: black; /* Cor de fundo */
+            border: none; /* Remove a borda */
+            color: white; /* Cor do texto */
+            padding: 10px 20px; /* Espaçamento interno (topo/baixo esquerda/direita) */
+            text-align: center; /* Alinhamento do texto */
+            text-decoration: none; /* Remove decoração do texto */
+            display: inline-block; /* Exibe como bloco */
+            font-size: 16px; /* Tamanho da fonte */
+            border-radius: 4px; /* Borda arredondada */
+            cursor: pointer; /* Mostra o cursor de apontar */
+            margin: 10px; /* Margens */
+        }
+
+        /* Estilos para o botão quando hover (passar o mouse) */
+        .meu-botao:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="meu-titulo">Resultados da Pesquisa</h2>
+    <h3 class="meu-subtitulo">Resultados Pessoa Fisica:</h3>
+    <ul>
+        {% for pf_result in results_pf %}
+            
+            <li><a href="/detalhesPF/{{ pf_result[0] }}">{{ pf_result[3] }}</a></li>
+            
+        {% endfor %}
+    </ul>
+
+    <h3 class="meu-subtitulo">Resultados Pessoa Juridica:</h3>
+    <ul>
+        {% for pj_result in results_pj %}
+            <li><a href="/detalhesPJ/{{ pj_result[0] }}">{{ pj_result[3] }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

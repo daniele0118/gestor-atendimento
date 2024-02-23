@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <nav>
+        <a href="/url_voltar"><img (click)="" src="{{url_for('static', filename='teste.png')}}"> </a>
+        <div class="dropdown">
+            <button class="drop-button">Clientes</button>
+            <div class="drop-options">
+                <a href="/selecionar_cliente">Cadastro</a>
+                <a id="abrirconsultarcliente">Consulta</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="drop-button">Usuarios</button>
+            <div class="drop-options">
+                <a href="/usuarios">Criar</a>
+                <a href="/inserirUserFuncionario">Funcionario</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="drop-button">Chamados</button>
+            <div class="drop-options">
+                <a href="/inserirChamado">Criar</a>
+                <a href="/inserirevento">Evento</a>
+                <a>Consultar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="drop-button">Assunto</button>
+            <div class="drop-options">
+                <a href="/inserir_assunto">Criar</a>
+                <a href="/consulta">Consultar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="drop-button">Equipamento</button>
+            <div class="drop-options">
+                <a href="/inserirEquipamento">Criar</a>
+                <a href="/consulta_equipamento">Consultar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+           <a href="/"> <button class="drop-button">Sair</button></a>
+        </div>
+    </nav>
+  </head>
+
+  <style>
+    .container1 {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin: 0 auto;
+    }
+
+    .container2 {
+        width: 500px;
+        margin: 0 auto;
+        align-items: center;
+
+    }
+
+  </style>
+  <body>
+    <div class="container1">
+        <button class="meu-botao" type="button" id="funcionario">Funcionario</button><br>
+    </div>
+
+    <div class="container1">
+        <button class="meu-botao" type="button" id="cliente">Cliente</button>
+    </div>
+    
+    <form action="/inserir_user_funcionario" method="post">
+        
+        <div id="inseriruserfuncionario" class="container2" style="display: None;">
+            <h2 class="meu-subtitulo">Cadastro usuario Funcionario</h2>
+            <label for="us_id" class="minha-label">ID:</label>
+            <input type="text" id="us_id" name="us_id" value="{{ us_id }}" readonly><br>
+        
+            <label for="us_nome" class="minha-label">Selecione o tipo de usuario: </label><select name="list_funcionario" size="1">
+              <option value="1">Administrador</option>
+              <option value="2">Usuario</option>
+              <option value="3">Gestor</option>
+            </select><br>
+
+            <label for="selectSetor" class="minha-label">Setor:</label>
+            <select name="selectSetor">
+    
+                {% for item in selectSetor %}
+                  <option value="{{ item.set_id }}">{{ item.set_nome }}</option>
+                {% endfor %}
+            </select> <br>
+            
+            <label for="fun_nome" class="minha-label">Nome:</label>
+            <input type="text" id="fun_nome" name="fun_nome"><br>
+        
+            <label for="fun_cpf" class="minha-label">CPF:</label>
+            <input type="text" id="fun_cpf" name="fun_cpf"><br>
+        
+            <label for="fun_celular" class="minha-label">Celular:</label>
+            <input type="text" id="fun_celular" name="fun_celular"><br>
+            
+            <label for="fun_endereco" class="minha-label">Endereço:</label>
+            <input type="text" id="fun_endereco" name="fun_endereco"><br>
+        
+            <label for="fun_login" class="minha-label">Login:</label>
+            <input type="text" id="fun_login" name="fun_login"><br>
+        
+            <label for="fun_senha" class="minha-label">Senha:</label>
+            <input type="text" id="fun_senha" name="fun_senha"><br>
+
+            <button type="submit" id="searchButton" class="meu-botao">Cadastrar</button>
+            <button type="button" id="fecharfuncionario" class="meu-botao">Fechar</button>
+        </div>
+    </form>
+
+    <form action="/inserir_user_cliente" method="post">
+        
+        <div id="inserirusercliente" class="container2" style="display: None;">
+            <h2 class="meu-subtitulo">Cadastro usuario Cliente</h2>
+            <label for="us_id" class="minha-label">ID:</label>
+            <input type="text" id="us_id" name="us_id" value="{{ us_id }}" readonly><br>
+        
+            <label for="us_nome" class="minha-label">Selecione o tipo de usuario: </label><select name="list_box" size="1">
+              <option value="3">Gestor</option>
+              <option value="2">Usuario</option>
+            </select><br>
+        
+            <label for="cli_id" class="minha-label">Cliente ID:</label>
+            <input type="text" id="cli_id" name="cli_id"><br>
+            
+            <label for="us_nome" class="minha-label">Nome:</label>
+            <input type="text" id="us_nome" name="us_nome"><br>
+        
+            <label for="us_celular" class="minha-label">Celular:</label>
+            <input type="text" id="us_celular" name="us_celular"><br>
+        
+            <label for="us_email" class="minha-label">E-mail:</label>
+            <input type="text" id="us_email" name="us_email"><br>
+        
+            <label for="us_login" class="minha-label">Login:</label>
+            <input type="text" id="us_login" name="us_login"><br>
+        
+            <label for="us_senha" class="minha-label">Senha:</label>
+            <input type="text" id="us_senha" name="us_senha"><br>
+            
+            <button type="submit" id="enviar" class="meu-botao">Cadastrar</button>
+            <button type="button" id="fecharcliente" class="meu-botao">Fechar</button>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById("funcionario").addEventListener("click", function () {
+            document.getElementById("inserirusercliente").style.display = "none"
+            document.getElementById("inseriruserfuncionario").style.display = "block";
+        });
+    
+        document.getElementById("fecharfuncionario").addEventListener("click", function () {
+            document.getElementById("inseriruserfuncionario").style.display = "none";
+        });
+
+        document.getElementById("cliente").addEventListener("click", function () {
+            document.getElementById("inseriruserfuncionario").style.display = "none"
+            document.getElementById("inserirusercliente").style.display = "block";
+        });
+    
+        document.getElementById("fecharcliente").addEventListener("click", function () {
+            document.getElementById("inserirusercliente").style.display = "none";
+        });
+    
+        
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juridica</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+        }
+        .minha-label {
+            font-size: 20px; /* Tamanho da fonte */
+            color: white; /* Cor do texto */
+            margin-bottom: 5px; /* Margem inferior */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <form action="/inserir_PJ" method="post">
+        <label for="cli_id" class="minha-label">ID:</label>
+        <input type="text" id="cli_id" name="cli_id" value="{{ cli_id }}" readonly><br>
+
+        <label for="pj_razaosocial" class="minha-label">Razão Social:</label>
+        <input type="text" id="pj_razaosocial" name="pj_razaosocial"><br>
+
+        <label for="pj_nomefantasia" class="minha-label">Nome Fantasia:</label>
+        <input type="text" id="pj_nomefantasia" name="pj_nomefantasia"><br>       
+
+        <label for="pj_cnpj" class="minha-label">CNPJ:</label>
+        <input type="text" id="pj_cnpj" name="pj_cnpj"><br>
+        
+        <label for="rua" class="minha-label">Rua:</label>
+        <input type="text" id="rua" name="rua"><br>
+
+        <label for="numero" class="minha-label">Numero:</label>
+        <input type="text" id="numero" name="numero"><br>      
+        
+        <label for="bairro" class="minha-label">Bairro:</label>
+        <input type="text" id="bairro" name="bairro"><br> 
+        
+        <label for="cidade" class="minha-label">Cidade:</label>
+        <input type="text" id="cidade" name="cidade"><br> 
+
+        <label for="estado" class="minha-label">Estado:</label>
+        <select id="list_estado" name="list_estado">
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select> <br>
+        
+        <label for="cli_cep" class="minha-label">CEP:</label>
+        <input type="text" id="cli_cep" name="cli_cep"><br>  
+        
+        <label for="cli_telefone" class="minha-label">Telefone:</label>
+        <input type="text" id="cli_telefone" name="cli_telefone"><br>  
+       
+        <label for="cli_celular" class="minha-label">Celular:</label>
+        <input type="text" id="cli_celular" name="cli_celular"><br>
+        
+        <label for="cli_email" class="minha-label">E-mail:</label>
+        <input type="text" id="cli_email" name="cli_email"><br>        
+
+        <input type="submit" value="Enviar"> 
+        
+    </form>
+    <a href="/selecionar_cliente"><input type="submit" value="Voltar"></a>
+</body>
+</html>

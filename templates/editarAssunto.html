@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Inserir Assunto</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+<body>
+  <h2 class="meu-titulo">Assunto</h2>
+
+  <div class="container">
+   <form action="/editar_assunto" method="post">
+
+    <label for="as_id" class="minha-label">ID:</label>
+    <input type="text" id="as_id" name="as_id" value="{{ as_id }}" readonly><br>
+
+    <label for="as_nome" class="minha-label">Assunto:</label>
+    <input type="text" id="as_nome" name="as_nome" value="{{ as_nome }}"><br>
+
+    <button type="submit" class="meu-botao"> Atualizar Informações </button>
+    <button type="button" id="meuBotao" class="meu-botao">Voltar</button>
+  </form>
+
+  <script>
+    document.getElementById("meuBotao").addEventListener("click", function() {
+        window.location.href = "/url_voltar";
+    });
+</script>
+</div>
+</body>
+</html>

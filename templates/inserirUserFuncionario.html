@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Inserir Usuario Funcionario</title>
+
+  <style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #333333;
+    }
+    .minha-label {
+        font-size: 20px; /* Tamanho da fonte */
+        color: white; /* Cor do texto */
+        margin-bottom: 5px; /* Margem inferior */
+    }
+
+    
+</style>
+</head>
+<body>
+   <form action="/inserir_user_funcionario" method="post">
+
+    <label for="us_id" class="minha-label">ID:</label>
+    <input type="text" id="us_id" name="us_id" value="{{ us_id }}" readonly><br>
+
+    <label for="us_nome" class="minha-label">Selecione o tipo de usuario: </label><select name="list_funcionario" size="1">
+      <option value="1">Administrador</option>
+      <option value="2">Usuario</option>
+      <option value="3">Gestor</option>
+    </select><br>
+    
+    <label for="fun_nome" class="minha-label">Nome:</label>
+    <input type="text" id="fun_nome" name="fun_nome"><br>
+
+    <label for="fun_cpf" class="minha-label">CPF:</label>
+    <input type="text" id="fun_cpf" name="fun_cpf"><br>
+
+    <label for="fun_celular" class="minha-label">Celular:</label>
+    <input type="text" id="fun_celular" name="fun_celular"><br>
+    
+    <label for="fun_endereco" class="minha-label">Endereço:</label>
+    <input type="text" id="fun_endereco" name="fun_endereco"><br>
+
+    <label for="fun_login" class="minha-label">Login:</label>
+    <input type="text" id="fun_login" name="fun_login"><br>
+
+    <label for="fun_senha" class="minha-label">Senha:</label>
+    <input type="text" id="fun_senha" name="fun_senha"><br>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+</body>
+</html>
